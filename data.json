@@ -1392,13 +1392,6 @@
         },
 
         {
-            "title": "Mad Gunz",
-            "image": "gamesimages/madgunz.png",
-            "link": "games/madgunz.html",
-            "category": "shooting"
-        },
-
-        {
             "title": "Geometry Wave",
             "image": "gamesimages/geometrywave.png",
             "link": "games/geometrywave.html",
