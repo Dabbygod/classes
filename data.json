@@ -323,7 +323,8 @@
             "title": "Boxing Random",
             "image": "gamesimages/boxingrandom.png",
             "link": "games/boxingrandom.html",
-            "category": "skill"
+            "category": "skill",
+            "group": "Random"
         },
 
         {
