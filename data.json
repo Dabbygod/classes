@@ -1413,6 +1413,13 @@
             "image": "gamesimages/burninrubber5.png",
             "link": "games/burninrubber5.html",
             "category": "driving"
+        },
+
+        {
+            "title": "Wheelie Life",
+            "image": "gamesimages/wheelielife.png",
+            "link": "games/wheelielife.html",
+            "category": "driving"
         }
     ]
 }
