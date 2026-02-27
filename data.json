@@ -6,7 +6,13 @@
             "link": "games/growagarden.html",
             "category": "calm"
         },
-                {
+        {
+            "title": "Chess",
+            "image": "gamesimages/CHESS.jpeg",
+            "link": "games/chess.html",
+            "category": "calm"
+        },
+        {
             "title": "Minesweeper",
             "image": "gamesimages/minesweeper.png",
             "link": "games/minesweeper.html",
@@ -1428,5 +1434,6 @@
         }
     ]
 }
+
 
 
