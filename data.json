@@ -6,7 +6,12 @@
             "link": "games/growagarden.html",
             "category": "calm"
         },
-
+                {
+            "title": "Minesweeper",
+            "image": "gamesimages/minesweeper.png",
+            "link": "games/minesweeper.html",
+            "category": "calm"
+        },
         {
             "title": "Steal A Brainrot Unblocked",
             "image": "gamesimages/stealabrainrot.png",
@@ -1423,4 +1428,5 @@
         }
     ]
 }
+
 
