@@ -25,12 +25,6 @@
             "category": "calm"
         },
         {
-            "title": "Sltiher.io",
-            "image": "gamesimages/slither.io.png",
-            "link": "games/slither.html",
-            "category": "skill"
-        }
-        {
             "title": "Minecraft Java",
             "image": "gamesimages/minecraft.png",
             "link": "games/minecraft.html",
@@ -1439,6 +1433,7 @@
         }
     ]
 }
+
 
 
 
