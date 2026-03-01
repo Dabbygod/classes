@@ -7,16 +7,16 @@
             "category": "calm"
         },
         {
-            "title": "Chess",
-            "image": "gamesimages/chess.png",
-            "link": "games/chess.html",
-            "category": "calm"
-        },
-        {
             "title": "Minesweeper",
             "image": "gamesimages/minesweeper.png",
             "link": "games/minesweeper.html",
             "category": "calm"
+        },
+        {
+            "title": "Chess",
+            "image": "gamesimages/chess.png",
+            "link": "games/chess.html",
+            "category": "calm" 
         },
         {
             "title": "Steal A Brainrot Unblocked",
@@ -1434,6 +1434,7 @@
         }
     ]
 }
+
 
 
 
