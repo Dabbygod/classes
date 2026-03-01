@@ -8,7 +8,7 @@
         },
         {
             "title": "Chess",
-            "image": "gamesimages/Chess.png",
+            "image": "gamesimages/chess.png",
             "link": "games/chess.html",
             "category": "calm"
         },
@@ -1434,6 +1434,7 @@
         }
     ]
 }
+
 
 
 
