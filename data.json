@@ -13,12 +13,6 @@
             "category": "calm"
         },
         {
-            "title": "Sltiher.io",
-            "image": "gamesimages/slither.io.png",
-            "link": "games/slither.io.html",
-            "category": "skill"
-        }
-        {
             "title": "Chess",
             "image": "gamesimages/chess.png",
             "link": "games/chess.html",
@@ -30,7 +24,12 @@
             "link": "games/stealabrainrot.html",
             "category": "calm"
         },
-
+        {
+            "title": "Sltiher.io",
+            "image": "gamesimages/slither.io.png",
+            "link": "games/slither.html",
+            "category": "skill"
+        }
         {
             "title": "Minecraft Java",
             "image": "gamesimages/minecraft.png",
@@ -1440,6 +1439,7 @@
         }
     ]
 }
+
 
 
 
