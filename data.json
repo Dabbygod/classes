@@ -19,17 +19,17 @@
             "category": "calm" 
         },
         {
-            "title": "Diep.io",
-            "image": "gamesimages/diep.png",
-            "link": "games/diep.html",
-            "category": "skill"
-        }
-        {
             "title": "Steal A Brainrot Unblocked",
             "image": "gamesimages/stealabrainrot.png",
             "link": "games/stealabrainrot.html",
             "category": "calm"
         },
+        {
+            "title": "Diep.io",
+            "image": "gamesimages/diep.png",
+            "link": "games/diep.html",
+            "category": "skill"
+        }
         {
             "title": "Minecraft Java",
             "image": "gamesimages/minecraft.png",
@@ -1439,6 +1439,7 @@
         }
     ]
 }
+
 
 
 
