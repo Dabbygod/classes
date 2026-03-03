@@ -29,7 +29,7 @@
             "image": "gamesimages/diep.png",
             "link": "games/diep.html",
             "category": "skill"
-        }
+        },
         {
             "title": "Minecraft Java",
             "image": "gamesimages/minecraft.png",
@@ -1439,6 +1439,7 @@
         }
     ]
 }
+
 
 
 
