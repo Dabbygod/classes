@@ -31,6 +31,12 @@
             "category": "skill"
         },
         {
+            "title": "Slither.io v2",
+            "image": "gamesimages/slitherio.png",
+            "link": "games/slitherio.html",
+            "category": "skill"
+        },
+        {
             "title": "Minecraft Java",
             "image": "gamesimages/minecraft.png",
             "link": "games/minecraft.html",
