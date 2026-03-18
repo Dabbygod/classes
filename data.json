@@ -1389,6 +1389,18 @@
         },
 
         {
+            "title": "Ultrakill",
+            "image": "gamesimages/ultrakill.png",
+            "link": "games/ultrakill.html",
+            "category": "shooting"
+        },
+
+        {
+            "title": "Five Nights At Epsitens",
+            "image": "gamesimages/fnae.png",
+            "link": "games/fnae.html",
+            "category": "skill"
+        {
             "title": "Ragdoll Hit",
             "image": "gamesimages/ragdollhit.png",
             "link": "games/ragdollhit.html",
