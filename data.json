@@ -1457,6 +1457,13 @@
             "image": "gamesimages/wheelielife.png",
             "link": "games/wheelielife.html",
             "category": "driving"
+        },
+
+        {
+            "title": "Fly the Plane",
+            "image": "gamesimages/flytheplane.png",
+            "link": "games/flytheplane.html",
+            "category": "skill"
         }
     ]
 }
