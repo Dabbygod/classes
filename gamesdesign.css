@@ -85,14 +85,18 @@ h1 {
 }
 
 .category-container a {
-  padding: 10px 15px;
-  background: #111;
+  padding: 12px 18px;
+  background: #222;
   color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-size: 14px;
-  white-space: nowrap;       /* prevents text from breaking */
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.2s;
 }
-#scrollToTopBtn:hover {
+
+.category-container a:hover {
+  background: #00ffcc;
+  color: black;
+  transform: scale(1.1);
+}#scrollToTopBtn:hover {
   background-color: #0056b3;
 }
