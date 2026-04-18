@@ -48,14 +48,6 @@ h1 {
     color: #333;
 }
 
-#drivinglink {
-    position: absolute;
-    font-family: Montserrat;
-    color: #333;
-    top: 10px;
-    right: 1px;
-}
-
 #searchInput {
   padding: 10px;
   width: 80%;
@@ -64,63 +56,6 @@ h1 {
   margin-bottom: 20px;
   border: 2px solid #ccc;
   border-radius: 8px;
-}
-
-
-#retrolink {
-    position: absolute;
-    font-family: Montserrat;
-    color: #333;
-    top: 10px;
-    right: 100px;
-}
-
-#skilllink {
-    position: absolute;
-    font-family: Montserrat;
-    color: #333;
-    top: 10px;
-    left: 1px;
-}
-
-#calmlink {
-    position: absolute;
-    font-family: Montserrat;
-    color: #333;
-    top: 10px;
-    left: 100px;
-}
-
-#shootinglink {
-    position: absolute;
-    font-family: Montserrat;
-    color: #333;
-    top: 10px;
-    left: 200px;
-}
-
-#suggestionslink {
-    position: absolute;
-    font-family: Montserrat;
-    color: #333;
-    top: 10px;
-    left: 300px;
-}
-
-#papasalley {
-    position: absolute;
-    font-family: Montserrat;
-    color: #333;
-    top: 10px;
-    left: 500px;
-}
-
-#randomsports {
-    position: absolute;
-    font-family: Montserrat;
-    color: #333;
-    top: 10px;
-    left: 800px;
 }
 
 #scrollToTopBtn {
@@ -139,11 +74,14 @@ h1 {
   font-size: 18px;
 }
 .category-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px;
-  max-width: 800px;
-  margin: auto;
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;         /* keeps everything in ONE row */
+  overflow-x: auto;          /* allows scrolling if it overflows */
+  margin: 20px auto;
+  padding: 10px;
 }
 
 .category-container a {
@@ -153,12 +91,8 @@ h1 {
   text-decoration: none;
   border-radius: 8px;
   font-size: 14px;
+  white-space: nowrap;       /* prevents text from breaking */
 }
-
-.category-container a:hover {
-  background: #333;
-}
-
 #scrollToTopBtn:hover {
   background-color: #0056b3;
 }
