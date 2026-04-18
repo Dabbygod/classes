@@ -7,6 +7,12 @@
             "category": "calm"
         },
         {
+            "title": "Babel Tower",
+            "image": "gamesimages/babel.png",
+            "link": "games/clbabletower.html",
+            "category": "calm"
+        },
+        {
             "title": "Minesweeper",
             "image": "gamesimages/minesweeper.png",
             "link": "games/minesweeper.html",
