@@ -13,6 +13,24 @@
             "category": "idle"
         },
         {
+            "title": "Idle Miner Tycoon",
+            "image": "gamesimages/Idleminertycoon.png",
+            "link": "games/clidleminertycoon.html",
+            "category": ""
+        },
+        {
+            "title": "Gold Miner",
+            "image": "gamesimages/goldminer.png",
+            "link": "games/clgoldminer.html",
+            "category": ""
+        },
+        {
+            "title": "Final Earth 2",
+            "image": "gamesimages/finalearth2.png",
+            "link": "games/clfinalearth2.html",
+            "category": ""
+        },
+        {
             "title": "Capybara Clicker",
             "image": "gamesimages/capybara.png",
             "link": "games/clcapybaraclicker.html",
