@@ -119,9 +119,9 @@
       "image": "gamesimages/tinyfishing.png",
       "link": "games/tinyfishing.html",
       "category": ["calm"]
-    }
+    },
 
-           {
+    {
       "title": "Johny Upgrade",
       "image": "gamesimages/johnyupgrade.png",
       "link": "games/johnyupgrade.html",
@@ -309,9 +309,9 @@
       "image": "gamesimages/cookieclicker.png",
       "link": "games/cookieclicker.html",
       "category": ["idle"]
-    }
+    },
 
-       {
+    {
       "title": "We Come What we Behold",
       "image": "gamesimages/webecomewhatwebehold.png",
       "link": "games/webecomewhatwebehold.html"
@@ -495,7 +495,7 @@
       "link": "games/papasdonuteria.html",
       "category": ["skill"],
       "group": "Papa"
-    }
+    },
 
     {
       "title": "There is no Game",
