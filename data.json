@@ -1134,7 +1134,7 @@
       "link": "games/funnyshooter2.html",
       "category": ["shooting"]
     },
-    {
+        {
       "title": "Gun Mayhem",
       "image": "gamesimages/gunmayhem.png",
       "link": "games/gunmayhem.html",
@@ -1308,5 +1308,5 @@
       "link": "games/flytheplane.html",
       "category": ["skill"]
     }
-    ]
+  ]
 }
