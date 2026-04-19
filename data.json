@@ -10,7 +10,7 @@
       "title": "Babel Tower",
       "image": "gamesimages/babel.png",
       "link": "games/clbabeltower.html",
-      "category": ["idle"]
+      "category": ["idle","clicker"]
     },
     {
       "title": "Idle Miner Tycoon",
@@ -308,7 +308,7 @@
       "title": "Cookie Clicker",
       "image": "gamesimages/cookieclicker.png",
       "link": "games/cookieclicker.html",
-      "category": ["idle"]
+      "category": ["idle","clicker"]
     },
 
     {
