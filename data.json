@@ -34,7 +34,7 @@
       "title": "Capybara Clicker",
       "image": "gamesimages/capybara.png",
       "link": "games/clcapybaraclicker.html",
-      "category": ["idle"]
+      "category": ["idle","clicker"]
     },
     {
       "title": "Minesweeper",
