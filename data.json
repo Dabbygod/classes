@@ -13,6 +13,12 @@
             "category": "idle"
         },
         {
+            "title": "Capybara Clicker",
+            "image": "gamesimages/capybara.png",
+            "link": "games/clcapybaraclicker.html",
+            "category": "idle"
+        },
+        {
             "title": "Minesweeper",
             "image": "gamesimages/minesweeper.png",
             "link": "games/minesweeper.html",
