@@ -16,19 +16,19 @@
             "title": "Idle Miner Tycoon",
             "image": "gamesimages/Idleminertycoon.png",
             "link": "games/clidleminertycoon.html",
-            "category": ""
+            "category": "idle"
         },
         {
             "title": "Gold Miner",
             "image": "gamesimages/goldminer.png",
             "link": "games/clgoldminer.html",
-            "category": ""
+            "category": "skill"
         },
         {
             "title": "Final Earth 2",
             "image": "gamesimages/finalearth2.png",
             "link": "games/clfinalearth2.html",
-            "category": ""
+            "category": "skill"
         },
         {
             "title": "Capybara Clicker",
