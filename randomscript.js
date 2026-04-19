@@ -2,7 +2,7 @@ fetch('data.json')
   .then(response => response.json())
   .then(data => {
     const gameContainer = document.getElementById('gameContainer');
-    const filteredGames = data.games.filter(game => game.group === "Random");
+    const filteredGames = data.games.filter(game => game.group.includes("Random")
 
     filteredGames.forEach(game => {
       const gameElement = document.createElement('div');
