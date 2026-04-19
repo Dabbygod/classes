@@ -1,336 +1,315 @@
 {
-    "games": [
-                {
-            "title": "Grow A Garden Unblocked",
-            "image": "gamesimages/growagarden.png",
-            "link": "games/growagarden.html",
-            "category": "calm"
-        },
-        {
-            "title": "Babel Tower",
-            "image": "gamesimages/babel.png",
-            "link": "games/clbabeltower.html",
-            "category": "idle"
-        },
-        {
-            "title": "Idle Miner Tycoon",
-            "image": "gamesimages/idleminertycoon.png",
-            "link": "games/clidleminertycoon.html",
-            "category": "idle"
-        },
-        {
-            "title": "Gold Miner",
-            "image": "gamesimages/goldminer.png",
-            "link": "games/clgoldminer.html",
-            "category": "skill"
-        },
-        {
-            "title": "Final Earth 2",
-            "image": "gamesimages/finalearth2.png",
-            "link": "games/clfinalearth2.html",
-            "category": "skill"
-        },
-        {
-            "title": "Capybara Clicker",
-            "image": "gamesimages/capybara.png",
-            "link": "games/clcapybaraclicker.html",
-            "category": "idle"
-        },
-        {
-            "title": "Minesweeper",
-            "image": "gamesimages/minesweeper.png",
-            "link": "games/minesweeper.html",
-            "category": "calm"
-        },
-        {
-            "title": "Chess",
-            "image": "gamesimages/chess.png",
-            "link": "games/chess.html",
-            "category": "calm" 
-        },
-        {
-            "title": "Steal A Brainrot Unblocked",
-            "image": "gamesimages/stealabrainrot.png",
-            "link": "games/stealabrainrot.html",
-            "category": "calm"
-        },
-        {
-            "title": "Diep.io",
-            "image": "gamesimages/diep.png",
-            "link": "games/diep.html",
-            "category": "skill"
-        },
-        {
-            "title": "Slither.io v2",
-            "image": "gamesimages/slitherio.png",
-            "link": "games/slitheriov2.html",
-            "category": "skill"
-        },
-        {
-            "title": "Minecraft Java",
-            "image": "gamesimages/minecraft.png",
-            "link": "games/minecraft.html",
-            "category": "skill"
-        },
+  "games": [
+    {
+      "title": "Grow A Garden Unblocked",
+      "image": "gamesimages/growagarden.png",
+      "link": "games/growagarden.html",
+      "category": ["calm"]
+    },
+    {
+      "title": "Babel Tower",
+      "image": "gamesimages/babel.png",
+      "link": "games/clbabeltower.html",
+      "category": ["idle"]
+    },
+    {
+      "title": "Idle Miner Tycoon",
+      "image": "gamesimages/idleminertycoon.png",
+      "link": "games/clidleminertycoon.html",
+      "category": ["idle"]
+    },
+    {
+      "title": "Gold Miner",
+      "image": "gamesimages/goldminer.png",
+      "link": "games/clgoldminer.html",
+      "category": ["skill"]
+    },
+    {
+      "title": "Final Earth 2",
+      "image": "gamesimages/finalearth2.png",
+      "link": "games/clfinalearth2.html",
+      "category": ["skill"]
+    },
+    {
+      "title": "Capybara Clicker",
+      "image": "gamesimages/capybara.png",
+      "link": "games/clcapybaraclicker.html",
+      "category": ["idle"]
+    },
+    {
+      "title": "Minesweeper",
+      "image": "gamesimages/minesweeper.png",
+      "link": "games/minesweeper.html",
+      "category": ["calm"]
+    },
+    {
+      "title": "Chess",
+      "image": "gamesimages/chess.png",
+      "link": "games/chess.html",
+      "category": ["calm"]
+    },
+    {
+      "title": "Steal A Brainrot Unblocked",
+      "image": "gamesimages/stealabrainrot.png",
+      "link": "games/stealabrainrot.html",
+      "category": ["calm"]
+    },
+    {
+      "title": "Diep.io",
+      "image": "gamesimages/diep.png",
+      "link": "games/diep.html",
+      "category": ["skill"]
+    },
+    {
+      "title": "Slither.io v2",
+      "image": "gamesimages/slitherio.png",
+      "link": "games/slitheriov2.html",
+      "category": ["skill"]
+    },
+    {
+      "title": "Minecraft Java",
+      "image": "gamesimages/minecraft.png",
+      "link": "games/minecraft.html",
+      "category": ["skill"]
+    },
+    {
+      "title": "Slope",
+      "image": "gamesimages/slope.png",
+      "link": "games/slope.html",
+      "category": ["skill"]
+    },
+    {
+      "title": "Slope 2",
+      "image": "gamesimages/slope2.png",
+      "link": "games/slope2.html",
+      "category": ["skill"]
+    },
+    {
+      "title": "Ovo",
+      "image": "gamesimages/ovo.png",
+      "link": "games/ovo.html",
+      "category": ["skill"]
+    },
+    {
+      "title": "Ovo 2",
+      "image": "gamesimages/ovo2.png",
+      "link": "games/ovo2.html",
+      "category": ["skill"]
+    },
+    {
+      "title": "Subway Surfers",
+      "image": "gamesimages/subwaysurfers.png",
+      "link": "games/subwaysurfers.html",
+      "category": ["skill"]
+    },
+    {
+      "title": "Snow Rider 3D",
+      "image": "gamesimages/snowrider3d.png",
+      "link": "games/snowrider3d.html",
+      "category": ["driving"]
+    },
+    {
+      "title": "Run 3",
+      "image": "gamesimages/run3.png",
+      "link": "games/run3.html",
+      "category": ["skill"]
+    },
+    {
+      "title": "Tiny Fishing",
+      "image": "gamesimages/tinyfishing.png",
+      "link": "games/tinyfishing.html",
+      "category": ["calm"]
+    }
 
-        {
-            "title": "Slope",
-            "image": "gamesimages/slope.png",
-            "link": "games/slope.html",
-            "category": "skill"
-        },
-        {
-            "title": "Slope 2",
-            "image": "gamesimages/slope2.png",
-            "link": "games/slope2.html",
-            "category": "skill"
-        },
-        {
-            "title": "Ovo",
-            "image": "gamesimages/ovo.png",
-            "link": "games/ovo.html",
-            "category": "skill"
-        },
-
-        {
-            "title": "Ovo 2",
-            "image": "gamesimages/ovo2.png",
-            "link": "games/ovo2.html",
-            "category": "skill"
-        },
-
-
-        {
-            "title": "Subway Surfers",
-            "image": "gamesimages/subwaysurfers.png",
-            "link": "games/subwaysurfers.html",
-            "category": "skill"
-        },
-        {
-            "title": "Snow Rider 3D",
-            "image": "gamesimages/snowrider3d.png",
-            "link": "games/snowrider3d.html",
-            "category": "driving"
-        },
-        {
-            "title": "Run 3",
-            "image": "gamesimages/run3.png",
-            "link": "games/run3.html",
-            "category": "skill"
-        },
-        {
-            "title": "Tiny Fishing",
-            "image": "gamesimages/tinyfishing.png",
-            "link": "games/tinyfishing.html",
-            "category": "calm"
-        },
-        {
-            "title": "Johny Upgrade",
-            "image": "gamesimages/johnyupgrade.png",
-            "link": "games/johnyupgrade.html",
-            "category": "skill"
-        },
-        {
-            "title": "Drift Boss",
-            "image": "gamesimages/driftboss.png",
-            "link": "games/driftboss.html",
-            "category": "driving"
-        },
-        {
-            "title": "MotoX3M",
-            "image": "gamesimages/motox3m.png",
-            "link": "games/motox3m.html",
-            "category": "driving"
-        },
-
-        {
-            "title": "Moto X3M Pool Party",
-            "image": "gamesimages/motox3mpp.png",
-            "link": "games/motox3mpp.html",
-            "category": "driving"
-        },
-
-        {
-            "title": "Moto X3M Spooky Land",
-            "image": "gamesimages/motox3msl.png",
-            "link": "games/motox3msl.html",
-            "category": "driving"
-        },
-
-        {
-            "title": "Moto X3M Winter",
-            "image": "gamesimages/motox3mwinter.png",
-            "link": "games/motox3mwinter.html",
-            "category": "driving"
-        },
-
-        {
-            "title": "MotoX3M 2",
-            "image": "gamesimages/motox3m2.png",
-            "link": "games/motox3m2.html",
-            "category": "driving"
-        },
-
-        {
-            "title": "2 Player Battle",
-            "image": "gamesimages/2playerbattle.png",
-            "link": "games/2playerbattle.html",
-            "category": "skill"
-        },
-        {
-            "title": "Death Run 3D",
-            "image": "gamesimages/deathrun3d.png",
-            "link": "games/deathrun3d.html",
-            "category": "skill"
-        },
-        {
-            "title": "Temple Run",
-            "image": "gamesimages/templerun.png",
-            "link": "games/templerun.html",
-            "category": "skill"
-        },
-        {
-            "title": "Duck Life",
-            "image": "gamesimages/ducklife.png",
-            "link": "games/ducklife.html"
-        },
-        {
-            "title": "Duck Life 2",
-            "image": "gamesimages/ducklife2.png",
-            "link": "games/ducklife2.html"
-        },
-
-        {
-            "title": "Duck Life 3",
-            "image": "gamesimages/ducklife3.png",
-            "link": "games/ducklife3.html"
-        },
-
-        {
-            "title": "Duck Life 4",
-            "image": "gamesimages/ducklife4.png",
-            "link": "games/ducklife4.html"
-        },
-
-
-        {
-            "title": "World's Hardest Game",
-            "image": "gamesimages/worldshardestgame.png",
-            "link": "games/worldshardestgame.html",
-            "category": "skill"
-        },
-
-        {
-            "title": "World's Hardest Game 2",
-            "image": "gamesimages/worldshardestgame2.png",
-            "link": "games/worldshardestgame2.html",
-            "category": "skill"
-        },
-
-                {
-            "title": "World's Hardest Game 3",
-            "image": "gamesimages/worldshardestgame3.png",
-            "link": "games/worldshardestgame3.html",
-            "category": "skill"
-        },
-
-
-        {
-            "title": "Path of Light",
-            "image": "gamesimages/pathoflight.png",
-            "link": "games/pathoflight.html"
-        },
-        {
-            "title": "Unlimited Wordle",
-            "image": "gamesimages/unlimitedwordle.png",
-            "link": "games/unlimitedwordle.html",
-            "category": "calm"
-        },
-        {
-            "title": "Google Doodle Island",
-            "image": "gamesimages/doodleisland.png",
-            "link": "games/doodleisland.html",
-            "category": "calm"
-        },
-        {
-            "title": "Big Tower Tiny Square 2",
-            "image": "gamesimages/bigtowertinysquare.png",
-            "link": "games/bigtowertinysquare.html",
-            "category": "skill"
-        },
-        {
-            "title": "Fruit Ninja",
-            "image": "gamesimages/fruitninja.png",
-            "link": "games/fruitninja.html"
-        },
-
-        {
-            "title": "Super Mario 64",
-            "image": "gamesimages/supermario64.png",
-            "link": "https://probablykam.github.io/Mario64webgl/",
-            "category": "skill"
-        },
-        {
-            "title": "Cluster Rush",
-            "image": "gamesimages/clusterrush.png",
-            "link": "games/clusterrush.html",
-            "category": "skill"
-        },
-        {
-            "title": "Getaway Shootout",
-            "image": "gamesimages/getawayshootout.png",
-            "link": "games/getawayshootout.html",
-            "category": "shooting"
-        },
-        {
-            "title": "Basketball Stars",
-            "image": "gamesimages/basketballstars.png",
-            "link": "games/basketballstars.html"
-        },
-        {
-            "title": "Globle Unlimited",
-            "image": "gamesimages/globleunlimited.png",
-            "link": "games/globleunlimited.html",
-            "category": "calm"
-        },
-        {
-            "title": "1V1.LOL",
-            "image": "gamesimages/1v1.lol.png",
-            "link": "games/1v1.lol.html",
-            "category": "shooting"
-        },
-        {
-            "title": "xx142b2.exe",
-            "image": "gamesimages/xx142b2.exe.png",
-            "link": "games/xx142b2.exe.html"
-        },
-        
-        {
-            "title": "Obby Robby",
-            "image": "gamesimages/obbyrobby.png",
-            "link": "games/obbyrobby.html"
-        },
-
-        {
-            "title": "Infinite Craft",
-            "image": "gamesimages/infinitecraft.png",
-            "link": "games/infinitecraft.html",
-            "category": "calm"
-        },
-
-        {
-            "title": "PolyTrack",
-            "image": "gamesimages/polytrack.png",
-            "link": "games/polytrack.html",
-            "category": "driving"
-        },
-
-        {
-            "title": "Cookie Clicker",
-            "image": "gamesimages/cookieclicker.png",
-            "link": "games/cookieclicker.html",
-            "category": "idle"
-        },
+           {
+      "title": "Johny Upgrade",
+      "image": "gamesimages/johnyupgrade.png",
+      "link": "games/johnyupgrade.html",
+      "category": ["skill"]
+    },
+    {
+      "title": "Drift Boss",
+      "image": "gamesimages/driftboss.png",
+      "link": "games/driftboss.html",
+      "category": ["driving"]
+    },
+    {
+      "title": "MotoX3M",
+      "image": "gamesimages/motox3m.png",
+      "link": "games/motox3m.html",
+      "category": ["driving"]
+    },
+    {
+      "title": "Moto X3M Pool Party",
+      "image": "gamesimages/motox3mpp.png",
+      "link": "games/motox3mpp.html",
+      "category": ["driving"]
+    },
+    {
+      "title": "Moto X3M Spooky Land",
+      "image": "gamesimages/motox3msl.png",
+      "link": "games/motox3msl.html",
+      "category": ["driving"]
+    },
+    {
+      "title": "Moto X3M Winter",
+      "image": "gamesimages/motox3mwinter.png",
+      "link": "games/motox3mwinter.html",
+      "category": ["driving"]
+    },
+    {
+      "title": "MotoX3M 2",
+      "image": "gamesimages/motox3m2.png",
+      "link": "games/motox3m2.html",
+      "category": ["driving"]
+    },
+    {
+      "title": "2 Player Battle",
+      "image": "gamesimages/2playerbattle.png",
+      "link": "games/2playerbattle.html",
+      "category": ["skill"]
+    },
+    {
+      "title": "Death Run 3D",
+      "image": "gamesimages/deathrun3d.png",
+      "link": "games/deathrun3d.html",
+      "category": ["skill"]
+    },
+    {
+      "title": "Temple Run",
+      "image": "gamesimages/templerun.png",
+      "link": "games/templerun.html",
+      "category": ["skill"]
+    },
+    {
+      "title": "Duck Life",
+      "image": "gamesimages/ducklife.png",
+      "link": "games/ducklife.html"
+    },
+    {
+      "title": "Duck Life 2",
+      "image": "gamesimages/ducklife2.png",
+      "link": "games/ducklife2.html"
+    },
+    {
+      "title": "Duck Life 3",
+      "image": "gamesimages/ducklife3.png",
+      "link": "games/ducklife3.html"
+    },
+    {
+      "title": "Duck Life 4",
+      "image": "gamesimages/ducklife4.png",
+      "link": "games/ducklife4.html"
+    },
+    {
+      "title": "World's Hardest Game",
+      "image": "gamesimages/worldshardestgame.png",
+      "link": "games/worldshardestgame.html",
+      "category": ["skill"]
+    },
+    {
+      "title": "World's Hardest Game 2",
+      "image": "gamesimages/worldshardestgame2.png",
+      "link": "games/worldshardestgame2.html",
+      "category": ["skill"]
+    },
+    {
+      "title": "World's Hardest Game 3",
+      "image": "gamesimages/worldshardestgame3.png",
+      "link": "games/worldshardestgame3.html",
+      "category": ["skill"]
+    },
+    {
+      "title": "Path of Light",
+      "image": "gamesimages/pathoflight.png",
+      "link": "games/pathoflight.html"
+    },
+    {
+      "title": "Unlimited Wordle",
+      "image": "gamesimages/unlimitedwordle.png",
+      "link": "games/unlimitedwordle.html",
+      "category": ["calm"]
+    },
+    {
+      "title": "Google Doodle Island",
+      "image": "gamesimages/doodleisland.png",
+      "link": "games/doodleisland.html",
+      "category": ["calm"]
+    },
+    {
+      "title": "Big Tower Tiny Square 2",
+      "image": "gamesimages/bigtowertinysquare.png",
+      "link": "games/bigtowertinysquare.html",
+      "category": ["skill"]
+    },
+    {
+      "title": "Fruit Ninja",
+      "image": "gamesimages/fruitninja.png",
+      "link": "games/fruitninja.html"
+    },
+    {
+      "title": "Super Mario 64",
+      "image": "gamesimages/supermario64.png",
+      "link": "https://probablykam.github.io/Mario64webgl/",
+      "category": ["skill"]
+    },
+    {
+      "title": "Cluster Rush",
+      "image": "gamesimages/clusterrush.png",
+      "link": "games/clusterrush.html",
+      "category": ["skill"]
+    },
+    {
+      "title": "Getaway Shootout",
+      "image": "gamesimages/getawayshootout.png",
+      "link": "games/getawayshootout.html",
+      "category": ["shooting"]
+    },
+    {
+      "title": "Basketball Stars",
+      "image": "gamesimages/basketballstars.png",
+      "link": "games/basketballstars.html"
+    },
+    {
+      "title": "Globle Unlimited",
+      "image": "gamesimages/globleunlimited.png",
+      "link": "games/globleunlimited.html",
+      "category": ["calm"]
+    },
+    {
+      "title": "1V1.LOL",
+      "image": "gamesimages/1v1.lol.png",
+      "link": "games/1v1.lol.html",
+      "category": ["shooting"]
+    },
+    {
+      "title": "xx142b2.exe",
+      "image": "gamesimages/xx142b2.exe.png",
+      "link": "games/xx142b2.exe.html"
+    },
+    {
+      "title": "Obby Robby",
+      "image": "gamesimages/obbyrobby.png",
+      "link": "games/obbyrobby.html"
+    },
+    {
+      "title": "Infinite Craft",
+      "image": "gamesimages/infinitecraft.png",
+      "link": "games/infinitecraft.html",
+      "category": ["calm"]
+    },
+    {
+      "title": "PolyTrack",
+      "image": "gamesimages/polytrack.png",
+      "link": "games/polytrack.html",
+      "category": ["driving"]
+    },
+    {
+      "title": "Cookie Clicker",
+      "image": "gamesimages/cookieclicker.png",
+      "link": "games/cookieclicker.html",
+      "category": ["idle"]
+    }
 
         {
             "title": "We Come What we Behold",
