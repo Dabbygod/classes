@@ -1,8 +1,9 @@
 fetch('data.json')
   .then(response => response.json())
   .then(data => {
-    const gameContainer = document.getElementById('gameContainer');
-    const filteredGames = data.games.filter(game => game.category === "shooting");
+  const filteredGames = data.games.filter(game =>
+  game.category && game.category.includes("shooting")
+);
 
     filteredGames.forEach(game => {
       const gameElement = document.createElement('div');
