@@ -1,11 +1,12 @@
 /*
    Cloak Engine — Inspired by Phantom101
-   Copyright © 2026 Eden
+   Copyright © 2026
    Portions inspired by Phantom (phantom101). Not affiliated.
 */
 
 (function () {
 
+    // Change tab title + favicon
     function cloakTab(title, icon) {
         document.title = title;
         document.querySelectorAll("link[rel*='icon']").forEach(l => l.remove());
@@ -15,6 +16,7 @@
         document.head.appendChild(link);
     }
 
+    // Build popup HTML with iframe
     function buildPopup(url, title, icon) {
         return `
             <!DOCTYPE html>
@@ -28,33 +30,45 @@
                 </style>
             </head>
             <body>
-                <iframe src="${url}"></iframe>
+                <iframe src="${url}" id="main-frame"></iframe>
             </body>
             </html>
         `;
     }
 
+    // Open popup window
     function openCloaked(url, title, icon) {
         const win = window.open("about:blank", "_blank");
         if (!win) return false;
+
         win.document.write(buildPopup(url, title, icon));
         win.document.close();
+
         return true;
     }
 
+    // Redirect original tab to Classroom
     function redirectToClassroom() {
         window.location.replace("https://classroom.google.com");
     }
 
+    // Launch cloak
     function launch(url) {
-        const success = openCloaked(url, "Classroom", "https://ssl.gstatic.com/classroom/favicon.png");
+        const success = openCloaked(
+            url,
+            "Classroom",
+            "https://ssl.gstatic.com/classroom/favicon.png"
+        );
+
         if (success) {
             redirectToClassroom();
         } else {
+            // Popup blocked → load inside this tab
             document.getElementById("main-frame").src = url;
         }
     }
 
+    // Start cloak when page loads
     window.addEventListener("DOMContentLoaded", () => {
         cloakTab("Classroom", "https://ssl.gstatic.com/classroom/favicon.png");
         launch("index.html");
