@@ -7,25 +7,34 @@
     <script src="cloak.js"></script>
 
     <style>
-        html, body { margin:0; padding:0; height:100%; overflow:hidden; }
-        #main-frame { width:100%; height:100%; border:none; }
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        #main-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
     </style>
 </head>
 
 <body>
     <iframe id="main-frame"></iframe>
 
+    <!-- ⭐ Inject Home Button Into Every Game -->
     <script>
     function injectHomeButtonIntoGame() {
         const iframe = document.querySelector("#main-frame");
-
         if (!iframe) return;
 
         iframe.onload = () => {
             try {
                 const doc = iframe.contentDocument || iframe.contentWindow.document;
 
-                // Create button
+                // Create Home button
                 const btn = doc.createElement("button");
                 btn.innerText = "Home";
                 btn.style.position = "fixed";
@@ -57,18 +66,52 @@
 
                 // Home button action
                 btn.onclick = () => {
-                    window.location.href = "index.html";
+                    iframe.src = "index.html";
                 };
 
                 doc.body.appendChild(btn);
 
             } catch (e) {
-                console.log("Could not inject button:", e);
+                console.log("Could not inject Home button:", e);
             }
         };
     }
 
     injectHomeButtonIntoGame();
     </script>
+
+    <!-- ⭐ Force ALL game links to load inside the iframe -->
+    <script>
+    function forceGamesIntoIframe() {
+        const iframe = document.querySelector("#main-frame");
+        if (!iframe) return;
+
+        iframe.onload = () => {
+            try {
+                const doc = iframe.contentDocument || iframe.contentWindow.document;
+
+                doc.addEventListener("click", (e) => {
+                    const link = e.target.closest("a");
+                    if (!link) return;
+
+                    const href = link.getAttribute("href");
+                    if (!href) return;
+
+                    // If link points to a game HTML file (not index)
+                    if (href.endsWith(".html") && !href.includes("index")) {
+                        e.preventDefault();
+                        iframe.src = href; // Load game INSIDE iframe
+                    }
+                });
+
+            } catch (err) {
+                console.log("Could not intercept game links:", err);
+            }
+        };
+    }
+
+    forceGamesIntoIframe();
+    </script>
+
 </body>
 </html>
