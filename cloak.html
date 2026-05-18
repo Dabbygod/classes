@@ -72,45 +72,46 @@
     };
 
     // Show/hide button based on iframe scrolling
-    function setupScrollDetection() {
+  function setupScrollDetection() {
 
-        try {
+    try {
 
-            const win = iframe.contentWindow;
-            const doc = iframe.contentDocument;
+        const win = iframe.contentWindow;
 
-            let lastScroll = 0;
+        let hideTimeout;
 
-            function handleScroll() {
+        function showButton() {
 
-                const currentScroll =
-                    win.scrollY ||
-                    doc.documentElement.scrollTop ||
-                    doc.body.scrollTop ||
-                    0;
+            homeBtn.classList.add("show");
 
-                // Show when scrolling UP
-                if (currentScroll < lastScroll && currentScroll > 50) {
-                    homeBtn.classList.add("show");
-                } else {
-                    homeBtn.classList.remove("show");
-                }
+            clearTimeout(hideTimeout);
 
-                lastScroll = currentScroll;
+            hideTimeout = setTimeout(() => {
+                homeBtn.classList.remove("show");
+            }, 1500);
+        }
+
+        // Detect mouse wheel scrolling
+        win.addEventListener("wheel", (e) => {
+
+            // Only show when scrolling UP
+            if (e.deltaY < 0) {
+                showButton();
             }
 
-            // Listen for scrolling
-            win.addEventListener("scroll", handleScroll);
+        });
 
-        } catch (err) {
+        // Touchpad / mobile support
+        win.addEventListener("touchmove", showButton);
 
-            console.log("Scroll detection failed:", err);
+    } catch (err) {
 
-            // Always show button if iframe access blocked
-            homeBtn.classList.add("show");
-        }
+        console.log("Wheel detection failed:", err);
+
+        // Fallback: always show button
+        homeBtn.classList.add("show");
     }
-
+}
     // Force game links into iframe
     function forceGamesIntoIframe() {
 
