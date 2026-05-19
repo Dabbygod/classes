@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Classroom</title>
 
-    <link rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png">
+    <link rel="icon"
+          href="https://ssl.gstatic.com/classroom/favicon.png">
 
     <script src="cloak.js"></script>
 
@@ -16,6 +17,7 @@
             height: 100%;
             overflow: hidden;
             background: white;
+            font-family: Arial, sans-serif;
         }
 
         #main-frame {
@@ -29,15 +31,19 @@
             position: fixed;
             top: 20px;
             left: 20px;
+
             padding: 10px 16px;
-            font-size: 16px;
+
             border: none;
             border-radius: 10px;
+
             background: #4a90e2;
             color: white;
+
+            font-size: 16px;
             cursor: pointer;
+
             z-index: 999999;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 
             opacity: 0;
             pointer-events: none;
@@ -49,72 +55,131 @@
             opacity: 1;
             pointer-events: auto;
         }
+
+        /* Small keybind label */
+        #keybind-display {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+
+            background: rgba(0,0,0,0.65);
+            color: white;
+
+            padding: 8px 12px;
+
+            border-radius: 8px;
+
+            font-size: 14px;
+
+            z-index: 999999;
+        }
     </style>
 </head>
 
 <body>
 
     <!-- Main iframe -->
-    <iframe id="main-frame" src="index.html"></iframe>
+    <iframe
+        id="main-frame"
+        src="index.html">
+    </iframe>
 
     <!-- Floating Home Button -->
     <button id="global-home-btn">
         Home
     </button>
 
-    <script>
-    const iframe = document.getElementById("main-frame");
-    const homeBtn = document.getElementById("global-home-btn");
+    <!-- Keybind Display -->
+    <div id="keybind-display"></div>
 
-    // Home button click
+    <script>
+    const iframe =
+        document.getElementById("main-frame");
+
+    const homeBtn =
+        document.getElementById("global-home-btn");
+
+    const keybindDisplay =
+        document.getElementById("keybind-display");
+
+    // Default exit key
+    let exitKey =
+        localStorage.getItem("exitKey") || "]";
+
+    // Show current keybind
+    keybindDisplay.innerText =
+        "Exit Key: " + exitKey;
+
+    // Home button action
     homeBtn.onclick = () => {
         iframe.src = "index.html";
     };
 
-    // Show/hide button based on iframe scrolling
-function setupScrollDetection(iframe, homeBtn) {
-
+    // Show button temporarily
     let hideTimeout;
 
-    function showButton() {
+    function showHomeButton() {
 
         homeBtn.classList.add("show");
 
         clearTimeout(hideTimeout);
 
         hideTimeout = setTimeout(() => {
+
             homeBtn.classList.remove("show");
+
         }, 1500);
     }
 
-    // Detect wheel scrolling ON the iframe element itself
+    // Detect mouse wheel on iframe
     iframe.addEventListener("wheel", (e) => {
 
-        // Scroll up
+        // Scroll UP
         if (e.deltaY < 0) {
-            showButton();
+            showHomeButton();
         }
 
     });
 
-    // Touch support
+    // Detect touch movement
     iframe.addEventListener("touchmove", () => {
-        showButton();
+        showHomeButton();
     });
-}
-    // Force game links into iframe
+
+    // Global keybind listener
+    window.addEventListener("keydown", (e) => {
+
+        exitKey =
+            localStorage.getItem("exitKey") || "]";
+
+        // Go home
+        if (e.key === exitKey) {
+
+            iframe.src = "index.html";
+
+            showHomeButton();
+        }
+    });
+
+    // Force links into iframe
     function forceGamesIntoIframe() {
 
         try {
 
-            const doc = iframe.contentDocument;
+            const doc =
+                iframe.contentDocument ||
+                iframe.contentWindow.document;
 
             doc.addEventListener("click", (e) => {
 
-                const link = e.target.closest("a");
+                const link =
+                    e.target.closest("a");
+
                 if (!link) return;
 
-                const href = link.getAttribute("href");
+                const href =
+                    link.getAttribute("href");
+
                 if (!href) return;
 
                 // Load internal HTML pages inside iframe
@@ -126,17 +191,48 @@ function setupScrollDetection(iframe, homeBtn) {
                 }
             });
 
-        } catch (err) {
+        } catch(err) {
 
-            console.log("Could not intercept links:", err);
+            console.log(
+                "Could not intercept links:",
+                err
+            );
         }
     }
 
-    // When iframe loads
+    // Re-setup when iframe changes
     iframe.onload = () => {
 
-        setupScrollDetection();
         forceGamesIntoIframe();
+
+        // Try keybind inside iframe too
+        try {
+
+            const win =
+                iframe.contentWindow;
+
+            win.addEventListener(
+                "keydown",
+                (e) => {
+
+                exitKey =
+                    localStorage.getItem("exitKey") || "]";
+
+                if (e.key === exitKey) {
+
+                    iframe.src = "index.html";
+
+                    showHomeButton();
+                }
+            });
+
+        } catch(err) {
+
+            console.log(
+                "Iframe keyboard hook failed:",
+                err
+            );
+        }
     };
     </script>
 
