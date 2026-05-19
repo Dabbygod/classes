@@ -102,28 +102,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!input || !saved) return;
 
-    // Load saved key
-    let key = localStorage.setItem("exitKey", e.code); || "]";
+    // Load saved keybind
+    const savedKey = localStorage.getItem("exitKey") || "]";
 
-    saved.innerText = "Current Keybind: " + key;
-    input.value = key;
+    saved.innerText = "Current Keybind: " + savedKey;
+    input.value = savedKey;
 
-    // Click input
-    input.addEventListener("click", () => {
-        input.focus();
-    });
-
-    // Set keybind
+    // Set new keybind (ONLY ONE listener)
     input.addEventListener("keydown", (e) => {
 
         e.preventDefault();
 
-        key = e.key;
+        const key = e.code;
 
         localStorage.setItem("exitKey", key);
 
         saved.innerText = "Current Keybind: " + key;
         input.value = key;
+    });
+
+    // Click to focus
+    input.addEventListener("click", () => {
+        input.focus();
     });
 
 });
