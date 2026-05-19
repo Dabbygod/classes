@@ -73,47 +73,35 @@
 
     // Show/hide button based on iframe scrolling
 function setupScrollDetection(iframe, homeBtn) {
-    if (!iframe || !homeBtn) {
-        console.error("setupScrollDetection: Missing iframe or homeBtn element.");
-        return;
-    }
 
     let hideTimeout;
 
     function showButton() {
+
         homeBtn.classList.add("show");
+
         clearTimeout(hideTimeout);
+
         hideTimeout = setTimeout(() => {
             homeBtn.classList.remove("show");
         }, 1500);
     }
 
-    // Try to attach listeners after iframe loads
-    iframe.addEventListener("load", () => {
-        try {
-            const win = iframe.contentWindow;
+    // Detect wheel scrolling ON the iframe element itself
+    iframe.addEventListener("wheel", (e) => {
 
-            // Test same-origin access
-            win.document; // Will throw if cross-origin
+        // Scroll up
+        if (e.deltaY < 0) {
+            showButton();
+        }
 
-            // Mouse wheel scroll detection
-            win.addEventListener("wheel", (e) => {
-                if (e.deltaY < 0) showButton(); // Scroll up
-            });
+    });
 
-            // Touch support
-            win.addEventListener("touchmove", showButton);
-
-        } catch (err) {
-            console.warn("Same-origin access denied. Using postMessage fallback.", err);
-
-            // Listen for messages from iframe (requires iframe code to send them)
-            window.addEventListener("message", (event) => {
-                // Optional: check event.origin for security
-                if (event.data === "scrollUp") {
-                    showButton();
-                }
-            }
+    // Touch support
+    iframe.addEventListener("touchmove", () => {
+        showButton();
+    });
+}
     // Force game links into iframe
     function forceGamesIntoIframe() {
 
