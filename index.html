@@ -41,6 +41,49 @@
     <div class="game-container" id="gameContainer"></div>
 
     <button id="scrollToTopBtn">Back To Top</button>
+    <div id="settings">
+    <h3>Exit Keybind</h3>
+
+    <input
+        type="text"
+        id="keybind-input"
+        placeholder="Press a key"
+        readonly
+    >
+
+    <p id="saved-key"></p>
+</div>
+
+<script>
+const input = document.getElementById("keybind-input");
+const saved = document.getElementById("saved-key");
+
+// Show saved key
+const existing = localStorage.getItem("exitKey");
+
+if (existing) {
+    saved.innerText = "Current Keybind: " + existing;
+}
+
+// Capture key press
+input.addEventListener("keydown", (e) => {
+
+    e.preventDefault();
+
+    const key = e.key;
+
+    localStorage.setItem("exitKey", key);
+
+    saved.innerText = "Current Keybind: " + key;
+
+    input.value = key;
+});
+
+// Focus input when clicked
+input.addEventListener("click", () => {
+    input.focus();
+});
+</script>
 </body>
 </html>
 
