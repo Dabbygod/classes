@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <title>Classroom</title>
 
-    <link rel="icon"
-          href="https://ssl.gstatic.com/classroom/favicon.png">
+    <link rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png">
 
     <script src="cloak.js"></script>
 
@@ -17,7 +16,6 @@
             height: 100%;
             overflow: hidden;
             background: white;
-            font-family: Arial, sans-serif;
         }
 
         #main-frame {
@@ -26,21 +24,21 @@
             border: none;
         }
 
-        /* Floating Home Button */
+        /* Home button */
         #global-home-btn {
             position: fixed;
             top: 20px;
             left: 20px;
 
             padding: 10px 16px;
-
-            border: none;
-            border-radius: 10px;
+            font-size: 16px;
 
             background: #4a90e2;
             color: white;
 
-            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+
             cursor: pointer;
 
             z-index: 999999;
@@ -48,7 +46,7 @@
             opacity: 0;
             pointer-events: none;
 
-            transition: opacity 0.25s ease;
+            transition: opacity 0.2s ease;
         }
 
         #global-home-btn.show {
@@ -56,17 +54,16 @@
             pointer-events: auto;
         }
 
-        /* Small keybind label */
-        #keybind-display {
+        /* Keybind hint */
+        #keybind-hint {
             position: fixed;
             bottom: 15px;
             right: 15px;
 
-            background: rgba(0,0,0,0.65);
+            background: rgba(0,0,0,0.7);
             color: white;
 
             padding: 8px 12px;
-
             border-radius: 8px;
 
             font-size: 14px;
@@ -78,162 +75,75 @@
 
 <body>
 
-    <!-- Main iframe -->
-    <iframe
-        id="main-frame"
-        src="index.html">
-    </iframe>
+    <iframe id="main-frame" src="index.html"></iframe>
 
-    <!-- Floating Home Button -->
-    <button id="global-home-btn">
-        Home
-    </button>
+    <button id="global-home-btn">Home</button>
 
-    <!-- Keybind Display -->
-    <div id="keybind-display"></div>
+    <div id="keybind-hint"></div>
 
     <script>
-    const iframe =
-        document.getElementById("main-frame");
+    const iframe = document.getElementById("main-frame");
+    const homeBtn = document.getElementById("global-home-btn");
+    const hint = document.getElementById("keybind-hint");
 
-    const homeBtn =
-        document.getElementById("global-home-btn");
+    // Load keybind
+    function getKey() {
+        return localStorage.getItem("exitKey") || "]";
+    }
 
-    const keybindDisplay =
-        document.getElementById("keybind-display");
+    hint.innerText = "Exit Key: " + getKey();
 
-    // Default exit key
-    let exitKey =
-        localStorage.getItem("exitKey") || "]";
-
-    // Show current keybind
-    keybindDisplay.innerText =
-        "Exit Key: " + exitKey;
-
-    // Home button action
+    // Home button
     homeBtn.onclick = () => {
         iframe.src = "index.html";
     };
 
-    // Show button temporarily
-    let hideTimeout;
-
-    function showHomeButton() {
-
+    // Show home button
+    function showButton() {
         homeBtn.classList.add("show");
 
-        clearTimeout(hideTimeout);
-
-        hideTimeout = setTimeout(() => {
-
+        setTimeout(() => {
             homeBtn.classList.remove("show");
-
         }, 1500);
     }
 
-    // Detect mouse wheel on iframe
-    iframe.addEventListener("wheel", (e) => {
-
-        // Scroll UP
-        if (e.deltaY < 0) {
-            showHomeButton();
-        }
-
-    });
-
-    // Detect touch movement
-    iframe.addEventListener("touchmove", () => {
-        showHomeButton();
-    });
-
-    // Global keybind listener
+    // KEYBIND EXIT (MAIN FEATURE)
     window.addEventListener("keydown", (e) => {
 
-        exitKey =
-            localStorage.getItem("exitKey") || "]";
+        const key = getKey();
 
-        // Go home
-        if (e.key === exitKey) {
+        if (e.key === key) {
 
             iframe.src = "index.html";
 
-            showHomeButton();
+            showButton();
         }
     });
 
-    // Force links into iframe
-    function forceGamesIntoIframe() {
-
-        try {
-
-            const doc =
-                iframe.contentDocument ||
-                iframe.contentWindow.document;
-
-            doc.addEventListener("click", (e) => {
-
-                const link =
-                    e.target.closest("a");
-
-                if (!link) return;
-
-                const href =
-                    link.getAttribute("href");
-
-                if (!href) return;
-
-                // Load internal HTML pages inside iframe
-                if (href.endsWith(".html")) {
-
-                    e.preventDefault();
-
-                    iframe.src = href;
-                }
-            });
-
-        } catch(err) {
-
-            console.log(
-                "Could not intercept links:",
-                err
-            );
-        }
-    }
-
-    // Re-setup when iframe changes
+    // Also try inside iframe (if allowed)
     iframe.onload = () => {
 
-        forceGamesIntoIframe();
-
-        // Try keybind inside iframe too
         try {
 
-            const win =
-                iframe.contentWindow;
+            const win = iframe.contentWindow;
 
-            win.addEventListener(
-                "keydown",
-                (e) => {
+            win.addEventListener("keydown", (e) => {
 
-                exitKey =
-                    localStorage.getItem("exitKey") || "]";
+                const key = getKey();
 
-                if (e.key === exitKey) {
+                if (e.key === key) {
 
                     iframe.src = "index.html";
 
-                    showHomeButton();
+                    showButton();
                 }
             });
 
-        } catch(err) {
-
-            console.log(
-                "Iframe keyboard hook failed:",
-                err
-            );
+        } catch (err) {
+            console.log("Iframe keybind blocked:", err);
         }
     };
+
     </script>
 
 </body>
