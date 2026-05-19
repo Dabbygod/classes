@@ -82,44 +82,20 @@
     <div id="keybind-hint"></div>
 
     <script>
-    const iframe = document.getElementById("main-frame");
-    const homeBtn = document.getElementById("global-home-btn");
-    const hint = document.getElementById("keybind-hint");
+function getKey() {
+    return localStorage.getItem("exitKey") || "]";
+}
 
-    // Load keybind
-    function getKey() {
-        return localStorage.getItem("exitKey") || "]";
+window.addEventListener("keydown", (e) => {
+
+    const key = getKey();
+
+    if (e.key === key) {
+
+        // Go to homepage
+        window.location.href = "index.html";
     }
-
-    hint.innerText = "Exit Key: " + getKey();
-
-    // Home button
-    homeBtn.onclick = () => {
-        iframe.src = "index.html";
-    };
-
-    // Show home button
-    function showButton() {
-        homeBtn.classList.add("show");
-
-        setTimeout(() => {
-            homeBtn.classList.remove("show");
-        }, 1500);
-    }
-
-    // KEYBIND EXIT (MAIN FEATURE)
-    window.addEventListener("keydown", (e) => {
-
-        const key = getKey();
-
-        if (e.key === key) {
-
-            iframe.src = "index.html";
-
-            showButton();
-        }
-    });
-
+});
     // Also try inside iframe (if allowed)
     iframe.onload = () => {
 
