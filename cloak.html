@@ -72,46 +72,48 @@
     };
 
     // Show/hide button based on iframe scrolling
-  function setupScrollDetection() {
-
-    try {
-
-        const win = iframe.contentWindow;
-
-        let hideTimeout;
-
-        function showButton() {
-
-            homeBtn.classList.add("show");
-
-            clearTimeout(hideTimeout);
-
-            hideTimeout = setTimeout(() => {
-                homeBtn.classList.remove("show");
-            }, 1500);
-        }
-
-        // Detect mouse wheel scrolling
-        win.addEventListener("wheel", (e) => {
-
-            // Only show when scrolling UP
-            if (e.deltaY < 0) {
-                showButton();
-            }
-
-        });
-
-        // Touchpad / mobile support
-        win.addEventListener("touchmove", showButton);
-
-    } catch (err) {
-
-        console.log("Wheel detection failed:", err);
-
-        // Fallback: always show button
-        homeBtn.classList.add("show");
+function setupScrollDetection(iframe, homeBtn) {
+    if (!iframe || !homeBtn) {
+        console.error("setupScrollDetection: Missing iframe or homeBtn element.");
+        return;
     }
-}
+
+    let hideTimeout;
+
+    function showButton() {
+        homeBtn.classList.add("show");
+        clearTimeout(hideTimeout);
+        hideTimeout = setTimeout(() => {
+            homeBtn.classList.remove("show");
+        }, 1500);
+    }
+
+    // Try to attach listeners after iframe loads
+    iframe.addEventListener("load", () => {
+        try {
+            const win = iframe.contentWindow;
+
+            // Test same-origin access
+            win.document; // Will throw if cross-origin
+
+            // Mouse wheel scroll detection
+            win.addEventListener("wheel", (e) => {
+                if (e.deltaY < 0) showButton(); // Scroll up
+            });
+
+            // Touch support
+            win.addEventListener("touchmove", showButton);
+
+        } catch (err) {
+            console.warn("Same-origin access denied. Using postMessage fallback.", err);
+
+            // Listen for messages from iframe (requires iframe code to send them)
+            window.addEventListener("message", (event) => {
+                // Optional: check event.origin for security
+                if (event.data === "scrollUp") {
+                    showButton();
+                }
+            }
     // Force game links into iframe
     function forceGamesIntoIframe() {
 
