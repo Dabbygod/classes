@@ -3,27 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title alt="unblocked games 21 cluster rush snow rider 3d hihihi unblocked games unblocked slope ovo tiny fishing run unblocked run 3  subway surfers">Classes</title>
+    <title>Classes</title>
+
     <link rel="stylesheet" href="gamesdesign.css">
     <link rel="icon" href="assets/gGames.jpg">
-    <script src="script.js"></script>
+
+    <script src="script.js" defer></script>
+
+    <style>
+        #settings {
+            position: sticky;
+            top: 0;
+
+            background: #1e1e1e;
+            color: white;
+
+            padding: 15px;
+            z-index: 9999;
+
+            border-bottom: 2px solid #444;
+        }
+
+        #keybind-input {
+            padding: 8px;
+            font-size: 16px;
+            width: 200px;
+            margin-top: 5px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .category-container a {
+            display: block;
+            margin: 5px 0;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Unblocked Games classes</h1>
 
-    <p id="proof">
-        Fork from Jack Malczewski
-    </p>
+<!-- ✅ SETTINGS AT TOP -->
+<div id="settings">
+    <h3>Exit Keybind</h3>
 
-    <p>Just Google "iammister1"</p>
+    <input
+        type="text"
+        id="keybind-input"
+        placeholder="Click and press a key"
+        readonly
+    >
 
-    <a href="https://iammister1.github.io/unblocked-games-22/">backup/duplicate link</a>
+    <p id="saved-key"></p>
+</div>
 
-    <p id="gamesnumber">Games = 0</p>
+<h1>Classroom</h1>
 
-    <p id="announcment">Announcment:added fly the plane</p>
-    
-    <div class="category-container">
+<p id="proof">Fork from Jack Malczewski</p>
+
+<p>Just Google "iammister1"</p>
+
+<a href="https://iammister1.github.io/unblocked-games-22/">
+    backup/duplicate link
+</a>
+
+<p id="gamesnumber">Games = 0</p>
+
+<p id="announcment">
+    Announcment: added about:blank cloaking
+</p>
+
+<div class="category-container">
     <a href="clicker.html">Clicker Games</a>
     <a href="papasalley.html">Papa's Alley</a>
     <a href="random.html">Random Sport Games</a>
@@ -35,55 +87,47 @@
     <a href="calm.html">Calm Games</a>
     <a href="shooting.html">Shooting Games</a>
 </div>
-    
-    <input type="text" id="searchInput" placeholder="Search" />
-    
-    <div class="game-container" id="gameContainer"></div>
 
-    <button id="scrollToTopBtn">Back To Top</button>
-    <div id="settings">
-    <h3>Exit Keybind</h3>
+<input type="text" id="searchInput" placeholder="Search" />
+<div class="game-container" id="gameContainer"></div>
 
-    <input
-        type="text"
-        id="keybind-input"
-        placeholder="Press a key"
-        readonly
-    >
+<button id="scrollToTopBtn">Back To Top</button>
 
-    <p id="saved-key"></p>
-</div>
-
+<!-- ✅ KEYBIND SCRIPT (ONLY ONE) -->
 <script>
-const input = document.getElementById("keybind-input");
-const saved = document.getElementById("saved-key");
+document.addEventListener("DOMContentLoaded", () => {
 
-// Show saved key
-const existing = localStorage.getItem("exitKey");
+    const input = document.getElementById("keybind-input");
+    const saved = document.getElementById("saved-key");
 
-if (existing) {
-    saved.innerText = "Current Keybind: " + existing;
-}
+    if (!input || !saved) return;
 
-// Capture key press
-input.addEventListener("keydown", (e) => {
-
-    e.preventDefault();
-
-    const key = e.key;
-
-    localStorage.setItem("exitKey", key);
+    // Load saved key
+    let key = localStorage.getItem("exitKey") || "]";
 
     saved.innerText = "Current Keybind: " + key;
-
     input.value = key;
-});
 
-// Focus input when clicked
-input.addEventListener("click", () => {
-    input.focus();
+    // Click input
+    input.addEventListener("click", () => {
+        input.focus();
+    });
+
+    // Set keybind
+    input.addEventListener("keydown", (e) => {
+
+        e.preventDefault();
+
+        key = e.key;
+
+        localStorage.setItem("exitKey", key);
+
+        saved.innerText = "Current Keybind: " + key;
+        input.value = key;
+    });
+
 });
 </script>
+
 </body>
 </html>
-
