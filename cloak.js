@@ -51,6 +51,41 @@
     function redirectToClassroom() {
         window.location.replace("https://classroom.google.com");
     }
+   function launchCloak(url) {
+
+    const win = window.open("about:blank", "_blank");
+
+    if (!win) {
+        alert("Popup blocked!");
+        return;
+    }
+
+    win.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Classroom</title>
+            <style>
+                html, body {
+                    margin: 0;
+                    height: 100%;
+                    overflow: hidden;
+                }
+                iframe {
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                }
+            </style>
+        </head>
+        <body>
+            <iframe src="${url}"></iframe>
+        </body>
+        </html>
+    `);
+
+    win.document.close();
+}
 
     // Launch cloak
     function launch(url) {
