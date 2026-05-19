@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!input || !saved) return;
 
     // Load saved key
-    let key = localStorage.getItem("exitKey") || "]";
+    let key = localStorage.setItem("exitKey", e.code); || "]";
 
     saved.innerText = "Current Keybind: " + key;
     input.value = key;
