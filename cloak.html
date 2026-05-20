@@ -29,43 +29,60 @@
     <iframe id="main-frame" src="index.html"></iframe>
 
     <script>
-    const iframe = document.getElementById("main-frame");
 
-    function getKey() {
-        return localStorage.getItem("exitKey") || "BracketRight";
+const iframe = document.getElementById("main-frame");
+
+function getKey() {
+    return localStorage.getItem("exitKey") || "BracketRight";
+}
+
+/* ===================================
+   OUTER PAGE KEYBIND
+=================================== */
+
+window.addEventListener("keydown", (e) => {
+
+    const key = getKey();
+
+    if (e.code === key) {
+
+        iframe.src = "index.html";
     }
+});
 
-    // MAIN KEYBIND (OUTSIDE iframe)
-    window.addEventListener("keydown", (e) => {
+/* ===================================
+   IFRAME KEYBIND
+=================================== */
 
-        const key = getKey();
+function attachIframeKeybind() {
 
-        if (e.code === key) {
-            window.location.href = "index.html";
-        }
-    });
+    try {
 
-    // OPTIONAL: inside iframe (if allowed)
-    iframe.onload = () => {
+        const win = iframe.contentWindow;
 
-        try {
+        win.addEventListener("keydown", (e) => {
 
-            const win = iframe.contentWindow;
+            const key = getKey();
 
-            win.addEventListener("keydown", (e) => {
+            if (e.code === key) {
 
-                const key = getKey();
+                iframe.src = "index.html";
+            }
+        });
 
-                if (e.code === key) {
-                    iframe.src = "index.html";
-                }
-            });
+    } catch (err) {
 
-        } catch (err) {
-            console.log("Iframe blocked:", err);
-        }
-    };
-    </script>
+        console.log("Iframe access blocked:", err);
+    }
+}
+
+/* wait for iframe */
+iframe.addEventListener("load", () => {
+
+    attachIframeKeybind();
+});
+
+</script>
 
 </body>
 </html>
