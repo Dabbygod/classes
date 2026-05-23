@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
    ABOUT:BLANK CLOAK (FIXED)
 ========================= */
 
-function openBlankCloak() {
+window.openBlankCloak = function () {
 
     const win = window.open("about:blank", "_blank");
 
@@ -155,9 +155,11 @@ function openBlankCloak() {
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>Classroom</title>
 
     <style>
+
         html, body {
             margin: 0;
             width: 100%;
@@ -170,7 +172,9 @@ function openBlankCloak() {
             height: 100%;
             border: none;
         }
+
     </style>
+
 </head>
 
 <body>
@@ -180,25 +184,35 @@ function openBlankCloak() {
     <script>
 
         function getKey() {
-            return localStorage.getItem("exitKey") || "BracketRight";
+            return localStorage.getItem("exitKey")
+                || "BracketRight";
         }
 
         window.addEventListener("keydown", (e) => {
 
-            // don't trigger while typing
             const active = document.activeElement;
-            if (active && (active.tagName === "INPUT" || active.tagName === "TEXTAREA")) {
+
+            if (
+                active &&
+                (
+                    active.tagName === "INPUT" ||
+                    active.tagName === "TEXTAREA"
+                )
+            ) {
                 return;
             }
 
             const key = getKey();
 
             if (e.code === key) {
-                window.location.href = "https://classroom.google.com";
+
+                window.location.href =
+                    "https://classroom.google.com";
             }
+
         });
 
-    </script>
+    <\\/script>
 
 </body>
 </html>
@@ -206,9 +220,7 @@ function openBlankCloak() {
     `);
 
     win.document.close();
-}
-
+};
 </script>
-
 </body>
 </html>
