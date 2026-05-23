@@ -179,41 +179,59 @@ window.openBlankCloak = function () {
 
 <body>
 
-    <iframe src="index.html"></iframe>
+    <iframe id="cloak-frame" src="index.html"></iframe>
 
-    <script>
+<script>
 
-        function getKey() {
-            return localStorage.getItem("exitKey")
-                || "BracketRight";
+    function getKey() {
+        return localStorage.getItem("exitKey")
+            || "BracketRight";
+    }
+
+    const frame =
+        document.getElementById("cloak-frame");
+
+    // OUTER PAGE
+    window.addEventListener("keydown", (e) => {
+
+        const key = getKey();
+
+        if (e.code === key) {
+
+            window.location.href =
+                "https://classroom.google.com";
         }
 
-        window.addEventListener("keydown", (e) => {
+    });
 
-            const active = document.activeElement;
+    // INSIDE IFRAME
+    frame.onload = () => {
 
-            if (
-                active &&
-                (
-                    active.tagName === "INPUT" ||
-                    active.tagName === "TEXTAREA"
-                )
-            ) {
-                return;
-            }
+        try {
 
-            const key = getKey();
+            const win =
+                frame.contentWindow;
 
-            if (e.code === key) {
+            win.addEventListener("keydown", (e) => {
 
-                window.location.href =
-                    "https://classroom.google.com";
-            }
+                const key = getKey();
 
-        });
+                if (e.code === key) {
 
-    <\\/script>
+                    top.location.href =
+                        "https://classroom.google.com";
+                }
 
+            });
+
+        } catch (err) {
+
+            console.log("iframe blocked:", err);
+        }
+
+    };
+
+<\/script>
 </body>
 </html>
 
