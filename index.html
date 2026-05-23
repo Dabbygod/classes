@@ -21,33 +21,50 @@
             font-family: Arial, sans-serif;
         }
 
+        /* SETTINGS BAR */
+
         #settings {
+
             position: sticky;
             top: 0;
+
             background: #1e1e1e;
             color: white;
+
             padding: 15px;
+
             z-index: 9999;
+
             border-bottom: 2px solid #444;
         }
 
         #keybind-input {
+
             padding: 8px;
+
             font-size: 16px;
+
             width: 220px;
+
             margin-top: 5px;
         }
 
-        .category-container a {
-            display: block;
-            margin: 5px 0;
+        #cloak-btn {
+
+            margin-top: 10px;
+
+            padding: 10px 16px;
+
+            font-size: 16px;
+
+            cursor: pointer;
         }
 
-        #cloak-btn {
-            margin-top: 10px;
-            padding: 10px 16px;
-            font-size: 16px;
-            cursor: pointer;
+        .category-container a {
+
+            display: block;
+
+            margin: 5px 0;
         }
 
     </style>
@@ -55,55 +72,211 @@
 
 <body>
 
+<!-- SETTINGS -->
+
 <div id="settings">
 
     <h3>Exit Keybind</h3>
 
-    <input type="text" id="keybind-input" placeholder="Click and press a key">
+    <input
+        type="text"
+        id="keybind-input"
+        placeholder="Click and press a key"
+        readonly
+    >
 
     <p id="saved-key"></p>
 
-    <button id="cloak-btn" onclick="openBlankCloak()">
+    <button
+        id="cloak-btn"
+        onclick="openBlankCloak()"
+    >
         Open Cloak Tab
     </button>
 
 </div>
 
+<!-- MAIN CONTENT -->
+
 <h1>Classroom</h1>
 
-<p id="proof">Fork from Jack Malczewski</p>
+<p id="proof">
+    Fork from Jack Malczewski
+</p>
 
-<p>Just Google "iammister1"</p>
+<p>
+    Just Google "iammister1"
+</p>
 
 <a href="https://iammister1.github.io/unblocked-games-22/">
     backup/duplicate link
 </a>
 
-<p id="gamesnumber">Games = 0</p>
+<p id="gamesnumber">
+    Games = 0
+</p>
 
-<p id="announcment">Announcement: added about:blank cloaking</p>
+<p id="announcment">
+    Announcement: added about:blank cloaking
+</p>
 
 <div class="category-container">
+
     <a href="clicker.html">Clicker Games</a>
+
     <a href="papasalley.html">Papa's Alley</a>
+
     <a href="random.html">Random Sport Games</a>
+
     <a href="driving.html">Driving</a>
+
     <a href="suggestions.html">Suggestions</a>
+
     <a href="retro.html">Retro Games</a>
+
     <a href="idle.html">Idle Games</a>
+
     <a href="skill.html">Skill Games</a>
+
     <a href="calm.html">Calm Games</a>
+
     <a href="shooting.html">Shooting Games</a>
+
 </div>
 
-<input type="text" id="searchInput" placeholder="Search">
+<input
+    type="text"
+    id="searchInput"
+    placeholder="Search"
+/>
 
-<div class="game-container" id="gameContainer"></div>
+<div
+    class="game-container"
+    id="gameContainer">
+</div>
 
-<button id="scrollToTopBtn">Back To Top</button>
+<button id="scrollToTopBtn">
+    Back To Top
+</button>
+
+<script>
+
+/* =========================
+   KEYBIND SETTINGS
+========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const input =
+        document.getElementById("keybind-input");
+
+    const saved =
+        document.getElementById("saved-key");
+
+    if (!input || !saved) return;
+
+    // LOAD SAVED KEY
+
+    const savedKey =
+        localStorage.getItem("exitKey")
+        || "BracketRight";
+
+    saved.innerText =
+        "Current Keybind: " + savedKey;
+
+    input.value = savedKey;
+
+    // FOCUS INPUT
+
+    input.addEventListener("click", () => {
+
+        input.focus();
+    });
+
+    // SAVE KEYBIND
+
+    input.addEventListener("keydown", (e) => {
+
+        e.preventDefault();
+
+        const key = e.code;
+
+        localStorage.setItem("exitKey", key);
+
+        input.value = key;
+
+        saved.innerText =
+            "Current Keybind: " + key;
+
+    });
+
+});
+
+
+/* =========================
+   ABOUT:BLANK CLOAK
+========================= */
+
+window.openBlankCloak = function () {
+
+    const popup =
+        window.open("about:blank", "_blank");
+
+    if (!popup) {
+
+        alert("Popup blocked!");
+
+        return;
+    }
+
+    popup.document.write(`
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Classroom</title>
+
+    <link rel="icon"
+    href="https://ssl.gstatic.com/classroom/favicon.png">
+
+    <style>
+
+        html, body {
+
+            margin: 0;
+
+            width: 100%;
+            height: 100%;
+
+            overflow: hidden;
+        }
+
+        iframe {
+
+            width: 100%;
+            height: 100%;
+
+            border: none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <iframe
+        id="cloak-frame"
+        src="index.html">
+    </iframe>
+
 <script>
 
     function getKey() {
+
         return localStorage.getItem("exitKey")
             || "BracketRight";
     }
@@ -111,7 +284,8 @@
     const frame =
         document.getElementById("cloak-frame");
 
-    // OUTER PAGE
+    // OUTER PAGE KEYBIND
+
     window.addEventListener("keydown", (e) => {
 
         const key = getKey();
@@ -123,7 +297,8 @@
 
     });
 
-    // INSIDE IFRAME
+    // IFRAME KEYBIND
+
     frame.onload = () => {
 
         try {
@@ -144,50 +319,26 @@
 
         } catch (err) {
 
-            console.log("iframe blocked:", err);
+            console.log(
+                "iframe blocked:",
+                err
+            );
         }
 
     };
 
-<\/script>
+<\\/script>
+
 </body>
+
 </html>
 
     `);
 
-    win.document.close();
+    popup.document.close();
 };
-/* =========================
-   MAIN PAGE EXIT KEY
-========================= */
 
-window.addEventListener("keydown", (e) => {
-
-    // don't trigger while typing
-    const active = document.activeElement;
-
-    if (
-        active &&
-        (
-            active.tagName === "INPUT" ||
-            active.tagName === "TEXTAREA"
-        )
-    ) {
-        return;
-    }
-
-    const key =
-        localStorage.getItem("exitKey")
-        || "BracketRight";
-
-    if (e.code === key) {
-
-        // go back to homepage
-        top.location.href =
-    "https://dabbygod.github.io/classes/";
-    }
-
-});
 </script>
+
 </body>
 </html>
