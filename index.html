@@ -239,6 +239,37 @@ window.openBlankCloak = function () {
 
     win.document.close();
 };
+/* =========================
+   MAIN PAGE EXIT KEY
+========================= */
+
+window.addEventListener("keydown", (e) => {
+
+    // don't trigger while typing
+    const active = document.activeElement;
+
+    if (
+        active &&
+        (
+            active.tagName === "INPUT" ||
+            active.tagName === "TEXTAREA"
+        )
+    ) {
+        return;
+    }
+
+    const key =
+        localStorage.getItem("exitKey")
+        || "BracketRight";
+
+    if (e.code === key) {
+
+        // go back to homepage
+        window.location.href =
+    "https://dabbygod.github.io/classes/";
+    }
+
+});
 </script>
 </body>
 </html>
