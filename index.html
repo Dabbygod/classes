@@ -340,6 +340,35 @@ frame.addEventListener("load", attachKeybind);
 
     popup.document.close();
 };
+window.addEventListener("keydown", (e) => {
+
+    // don't trigger while typing
+    const active =
+        document.activeElement;
+
+    if (
+        active &&
+        (
+            active.tagName === "INPUT" ||
+            active.tagName === "TEXTAREA"
+        )
+    ) {
+        return;
+    }
+
+    const key =
+        localStorage.getItem("exitKey")
+        || "BracketRight";
+
+    // MAIN PAGE EXIT
+    if (e.code === key) {
+
+        // go back home
+        window.location.href =
+            "index.html";
+    }
+
+});
 
 </script>
 
