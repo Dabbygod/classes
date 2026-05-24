@@ -299,33 +299,36 @@ window.openBlankCloak = function () {
 
     // IFRAME KEYBIND
 
-    frame.onload = () => {
+function attachKeybind() {
 
-        try {
+    try {
 
-            const win =
-                frame.contentWindow;
+        const win =
+            frame.contentWindow;
 
-            win.addEventListener("keydown", (e) => {
+        win.addEventListener("keydown", (e) => {
 
-                const key = getKey();
+            const key = getKey();
 
-                if (e.code === key) {
+            if (e.code === key) {
 
-                    frame.src = "index.html";
-                }
+                frame.src = "index.html";
+            }
 
-            });
+        });
 
-        } catch (err) {
+    } catch (err) {
 
-            console.log(
-                "iframe blocked:",
-                err
-            );
-        }
+        console.log(
+            "iframe blocked:",
+            err
+        );
+    }
 
-    };
+}
+
+// attach every time iframe changes page
+frame.addEventListener("load", attachKeybind);
 
 <\\/script>
 
