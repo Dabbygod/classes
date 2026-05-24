@@ -284,18 +284,12 @@ window.openBlankCloak = function () {
     const frame =
         document.getElementById("cloak-frame");
 
-    // OUTER PAGE KEYBIND
-
-    window.addEventListener("keydown", (e) => {
-
-        const key = getKey();
-
-        if (e.code === key) {
-
-            frame.src = "index.html";
-        }
-
-    });
+    win.addEventListener("keydown", (e) => {
+    const key = getKey();
+    if (e.code === key) {
+        frame.src = "index.html";
+    }
+});
 
     // IFRAME KEYBIND
 
