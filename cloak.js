@@ -16,7 +16,7 @@
         document.head.appendChild(link);
     }
 
-    // Build popup HTML with iframe
+    // Build popup HTML with iframe (not used by your new cloak, but safe to keep)
     function buildPopup(url, title, icon) {
         return `
             <!DOCTYPE html>
@@ -36,7 +36,7 @@
         `;
     }
 
-    // Open popup window
+    // Open popup window (unused by your new cloak, but harmless)
     function openCloaked(url, title, icon) {
         const win = window.open("about:blank", "_blank");
         if (!win) return false;
@@ -47,66 +47,9 @@
         return true;
     }
 
-    // Redirect original tab to Classroom
-    function redirectToClassroom() {
-        window.location.replace("https://classroom.google.com");
-    }
-   function launchCloak(url) {
-
-    const win = window.open("about:blank", "_blank");
-
-    if (!win) {
-        alert("Popup blocked!");
-        return;
-    }
-
-    win.document.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <title>Classroom</title>
-            <style>
-                html, body {
-                    margin: 0;
-                    height: 100%;
-                    overflow: hidden;
-                }
-                iframe {
-                    width: 100%;
-                    height: 100%;
-                    border: none;
-                }
-            </style>
-        </head>
-        <body>
-            <iframe src="${url}"></iframe>
-        </body>
-        </html>
-    `);
-
-    win.document.close();
-}
-
-    // Launch cloak
-    function launch(url) {
-        const success = openCloaked(
-            url,
-            "Classroom",
-            "https://ssl.gstatic.com/classroom/favicon.png"
-        );
-
-        if (success) {
-            redirectToClassroom();
-        } else {
-            // Popup blocked → load inside this tab
-            document.getElementById("main-frame").src = url;
-        }
-    }
-
-    // Start cloak when page loads
+    // Keep ONLY the tab cloak on load
     window.addEventListener("DOMContentLoaded", () => {
         cloakTab("Classroom", "https://ssl.gstatic.com/classroom/favicon.png");
-        launch("index.html");
     });
 
 })();
