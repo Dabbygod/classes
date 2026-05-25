@@ -1,5 +1,3 @@
-// Universal Exit Key Script
-
 (function () {
 
     function getExitKey() {
@@ -17,9 +15,7 @@
         if (window.location.pathname.endsWith("index.html")) return;
 
         // Otherwise → go home
-        if (e.code === key) {
-            window.location.href = "index.html";
-        }
+        window.location.href = "../index.html";
     });
 
 })();
