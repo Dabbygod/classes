@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="exitKey.js"></script>
+
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -175,10 +177,8 @@ window.openBlankCloak = function () {
 </script>
 
 <script>
-// AUTO-INJECT exitKey.js INTO ALL GAMES LOADED IN IFRAMES
 document.addEventListener("DOMContentLoaded", () => {
     const iframe = document.querySelector("iframe");
-
     if (!iframe) return;
 
     iframe.addEventListener("load", () => {
