@@ -26,6 +26,12 @@
             "link": "games/fancypants3.html",
             "category": ["skill"]
     },
+    {
+            "title": "2+ Player Games",
+            "image": "gamesimages/234playergames.png",
+            "link": "games/cl234playergame.html",
+            "category": ["skill"]
+    },
       {
       "title": "Babel Tower",
       "image": "gamesimages/babel.png",
